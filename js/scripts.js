@@ -1,3 +1,5 @@
+
+//Created an array for pokemonList
 let pokemonList = [
   {
     name: "Squirtle",
