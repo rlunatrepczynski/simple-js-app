@@ -18,10 +18,11 @@ let pokemonList = [
   }
 ];
 
-//Created a for loop for pokemonList
-for (let i = 0; i < pokemonList.length; i++) {
-  document.write(pokemonList[i].name + " " + "(height: " + pokemonList[i].height + ")");
-  if (pokemonList[i].height > 2) {
-    document.write(' - Wow! That\'s a big one!');//created conditional for pokemon height
+//Created a forEach loop for pokemonList
+pokemonList.forEach(function (pokemon) {
+  if (pokemon.height > 2) {
+    document.write(pokemon.name + "  " + "(height:" + "  " + pokemon.height + " ) " + "- Wow. That's big!" + "<br>"); //condition for pokemon with the height > 2
+  } else {
+    document.write(pokemon.name + "  " + "(height:" + "  " + pokemon.height + " ) " + "<br>");
   }
-}
+});
