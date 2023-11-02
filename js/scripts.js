@@ -1,5 +1,5 @@
 //Created IIFE with getAll and add functions
-let pokemonRepository = function () {
+let pokemonRepository = (function () {
   //Created an array for pokemonList
   let pokemonList = [
     {
