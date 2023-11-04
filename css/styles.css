@@ -19,3 +19,13 @@ body {
     color: black;
     border: 5px solid #fcdf05;
 }
+
+@media all and (max-width: 500px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .button-class {
+        padding: 15px;
+    }
+}
