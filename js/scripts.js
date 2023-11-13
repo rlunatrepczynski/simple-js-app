@@ -25,7 +25,7 @@ let pokemonRepository = (function () {
 
 
     let myImage = document.createElement('img');
-    myImage.src = pokemon.imageUrl;
+    myImage.src = item.imageUrl;
     modal.appendChild(myImage);
 
     modal.appendChild(closeButtonElement);
