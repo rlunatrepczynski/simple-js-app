@@ -5,9 +5,12 @@ let pokemonRepository = (function () {
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
   //modal container
-  let modalContainer = document.querySelector(".modal-container");
+  let modalContainer = document.querySelector("#modal-container");
 
   function showModal(pokemon) {
+    // Clear all existing modal content
+    modalContainer.innerHTML = '';
+
     let modal = document.createElement("div");
     modal.classList.add("modal");
 
@@ -25,7 +28,7 @@ let pokemonRepository = (function () {
 
 
     let myImage = document.createElement('img');
-    myImage.src = item.imageUrl;
+    myImage.src = pokemon.imageUrl;
     modal.appendChild(myImage);
 
     modal.appendChild(closeButtonElement);
@@ -38,8 +41,8 @@ let pokemonRepository = (function () {
   let dialogPromiseReject;
 
   function hideModal() {
-    let modal = document.querySelector(".modal");
-    modal.remove();
+    let modalContainer = document.querySelector('#modal-container');
+    modalContainer.classList.remove('is-visible');
 
     if (dialogPromiseReject) {
       dialogPromiseReject();
@@ -115,7 +118,7 @@ let pokemonRepository = (function () {
 
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
-      console.log(item);
+      showModal(item);
     });
   }
 
