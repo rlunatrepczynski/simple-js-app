@@ -6,9 +6,11 @@ let pokemonRepository = (function () {
 
 
   function showModal(pokemon) {
+    let modalHeader = document.querySelector('.modal-header');
     let modalBody = document.querySelector('.modal-body');
     let modalTitle = document.querySelector('modal-title');
-    let modalHeader = document.querySelector('.modal-header');
+    let modalFooter = document.querySelector('modal-footer')
+
 
     modalTitle.innerHTML = '';
     modalBody.innerHTML = '';
