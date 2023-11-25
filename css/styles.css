@@ -1,9 +1,21 @@
 body {
-    background-color: #ff0000;
+    background-color: #fcdf05;
 }
 
 h1 {
     text-align: center;
+    color: black;
+}
+
+.pokemon-list {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+li.list-group-item {
+    background-color: red;
+    border: 1px solid black;
 }
 
 .button-class {
@@ -19,8 +31,8 @@ h1 {
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
-    background-color: white;
-    color: black;
+    background-color: blue;
+    color: white;
     border: 5px solid #fcdf05;
 }
 
