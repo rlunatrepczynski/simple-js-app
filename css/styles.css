@@ -15,7 +15,7 @@ h1 {
 
 li.list-group-item {
     background-color: red;
-    border: 1px solid black;
+    border: none;
 }
 
 .button-class {
@@ -26,7 +26,7 @@ li.list-group-item {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 24px;
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
@@ -34,6 +34,7 @@ li.list-group-item {
     background-color: blue;
     color: white;
     border: 5px solid #fcdf05;
+    width: 300px;
 }
 
 @media all and (max-width: 500px) {
