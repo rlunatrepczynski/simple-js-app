@@ -109,8 +109,6 @@ let pokemonRepository = (function () {
   };
 })();
 
-// ... Existing code ...
-
 // Retrieve Pokemon Array from IIFE
 let pokemonList = pokemonRepository.getAll();
 
@@ -155,4 +153,3 @@ function clearPokemonList() {
   let pokemonListContainer = document.querySelector(".pokemon-list");
   pokemonListContainer.innerHTML = '';
 }
-
