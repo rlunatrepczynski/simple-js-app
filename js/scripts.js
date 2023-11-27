@@ -1,4 +1,4 @@
-//Created IIFE with getAll and add functions
+//  Created IIFE with getAll and add functions
 let pokemonRepository = (function () {
   //Created an array for pokemonList
   let pokemonList = [];
@@ -109,11 +109,50 @@ let pokemonRepository = (function () {
   };
 })();
 
-//Retrieve Pokemon Array from IIFE
+// ... Existing code ...
+
+// Retrieve Pokemon Array from IIFE
 let pokemonList = pokemonRepository.getAll();
-//Created a forEach loop for pokemonList
+
+// Created a forEach loop for pokemonList
 pokemonRepository.loadList().then(function () {
   pokemonList.forEach(function (pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
+
+// Add an event listener to the search bar
+let searchBar = document.getElementById('searchBar');
+searchBar.addEventListener('input', function () {
+  // Call a function to filter and display Pokemon based on the search term
+  filterAndDisplayPokemons(this.value.toLowerCase());
+});
+
+// Function to filter and display Pokemon based on the search term
+function filterAndDisplayPokemons(searchTerm) {
+  // Get the filtered Pokemon list
+  let filteredPokemonList = pokemonList.filter(function (pokemon) {
+    return pokemon.name.toLowerCase().includes(searchTerm);
+  });
+
+  // Clear the current display
+  clearPokemonList();
+
+  // Display the filtered Pokemon list or all Pokemon if the search bar is cleared
+  if (searchTerm === '') {
+    pokemonList.forEach(function (pokemon) {
+      pokemonRepository.addListItem(pokemon);
+    });
+  } else {
+    filteredPokemonList.forEach(function (pokemon) {
+      pokemonRepository.addListItem(pokemon);
+    });
+  }
+}
+
+// Function to clear the current Pokemon list display
+function clearPokemonList() {
+  let pokemonListContainer = document.querySelector(".pokemon-list");
+  pokemonListContainer.innerHTML = '';
+}
+
