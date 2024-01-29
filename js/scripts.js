@@ -155,11 +155,10 @@ function clearPokemonList() {
 }
 
 setTimeout(() => {
-  const results = document.querySelector('.results');
-  const loading = document.querySelector('#loading-container');
-  loading.classList.add('hide');
-  results.innerHTML = '<p>Thanks you for waiting</p>';
+  const loadingContainer = document.querySelector('#loading-container');
+  loadingContainer.style.display = 'none';
 }, 5000);
+
 
 const button = document.querySelector('.show');
 button.addEventListener('click', () => {
