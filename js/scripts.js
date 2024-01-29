@@ -160,14 +160,7 @@ function loadList() {
   return fetch(apiUrl).then(function (response) {
     return response.json();
   }).then(function (json) {
-    json.results.forEach(function (item) {
-      let pokemon = {
-        name: item.name,
-        detailsUrl: item.url,
-        imageUrl: item.myImage,
-      };
-      add(pokemon);
-    });
+    // ... (rest of your code)
 
     // Hide loading container after data is loaded
     document.getElementById('loading-container').style.display = 'none';
@@ -177,4 +170,3 @@ function loadList() {
     document.getElementById('loading-container').style.display = 'none';
   });
 }
-
