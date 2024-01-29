@@ -153,3 +153,28 @@ function clearPokemonList() {
   let pokemonListContainer = document.querySelector(".pokemon-list");
   pokemonListContainer.innerHTML = '';
 }
+function loadList() {
+  // Show loading container while data is being fetched
+  document.getElementById('loading-container').style.display = 'flex';
+
+  return fetch(apiUrl).then(function (response) {
+    return response.json();
+  }).then(function (json) {
+    json.results.forEach(function (item) {
+      let pokemon = {
+        name: item.name,
+        detailsUrl: item.url,
+        imageUrl: item.myImage,
+      };
+      add(pokemon);
+    });
+
+    // Hide loading container after data is loaded
+    document.getElementById('loading-container').style.display = 'none';
+  }).catch(function (e) {
+    console.error(e);
+    // Make sure to hide loading container in case of an error
+    document.getElementById('loading-container').style.display = 'none';
+  });
+}
+
