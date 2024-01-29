@@ -170,3 +170,8 @@ function loadList() {
     document.getElementById('loading-container').style.display = 'none';
   });
 }
+
+// Hide the loading container once the page is fully loaded
+window.addEventListener('load', function () {
+  document.getElementById('loading-container').style.display = 'none';
+});
