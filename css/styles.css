@@ -37,22 +37,13 @@ li.list-group-item {
     width: 300px;
 }
 
-#loading-container {
-    display: none;
-    justify-content: center;
-    align-items: center;
+#preloader {
+    background: #000 url(img/loading.gif) no-repeat center center;
+    background-size: 15%;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.8);
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    z-index: 1000;
-}
-
-#loading-gif {
-    width: 50px;
-    height: auto;
+    position: fixed;
+    z-index: 100;
 }
 
 @media all and (max-width: 500px) {
