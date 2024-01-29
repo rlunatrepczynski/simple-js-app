@@ -37,6 +37,25 @@ li.list-group-item {
     width: 300px;
 }
 
+#loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#loading-gif {
+    width: 50px;
+    height: auto;
+}
+
+
 @media all and (max-width: 500px) {
     h1 {
         font-size: 22px;
@@ -45,25 +64,4 @@ li.list-group-item {
     .button-class {
         padding: 15px;
     }
-}
-
-#loading-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: rgba(255, 255, 255, 0.8);
-    /* Optional: semi-transparent background */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    /* Make sure it's higher than other elements */
-}
-
-#loading-gif {
-    width: 50px;
-    /* Adjust the width as needed */
-    height: auto;
 }
