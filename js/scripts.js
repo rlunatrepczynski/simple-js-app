@@ -153,25 +153,16 @@ function clearPokemonList() {
   let pokemonListContainer = document.querySelector(".pokemon-list");
   pokemonListContainer.innerHTML = '';
 }
-function loadList() {
-  // Show loading container while data is being fetched
-  document.getElementById('loading-container').style.display = 'flex';
 
-  return fetch(apiUrl).then(function (response) {
-    return response.json();
-  }).then(function (json) {
-    // ... (rest of your code)
+setTimeout(() => {
+  const results = document.querySelector('.results');
+  const loading = document.querySelector('#loading-container');
+  loading.classList.add('hide');
+  results.innerHTML = '<p>Thanks you for waiting</p>';
+}, 5000);
 
-    // Hide loading container after data is loaded
-    document.getElementById('loading-container').style.display = 'none';
-  }).catch(function (e) {
-    console.error(e);
-    // Make sure to hide loading container in case of an error
-    document.getElementById('loading-container').style.display = 'none';
-  });
-}
-
-// Hide the loading container once the page is fully loaded
-window.addEventListener('load', function () {
-  document.getElementById('loading-container').style.display = 'none';
+const button = document.querySelector('.show');
+button.addEventListener('click', () => {
+  const loading = document.querySelector('.loading');
+  loading.classList.remove('hide');
 });
