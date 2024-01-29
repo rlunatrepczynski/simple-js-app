@@ -119,6 +119,11 @@ pokemonRepository.loadList().then(function () {
   });
 });
 
+// Hide the loading gif after loading the Pokemon list
+const loadingContainer = document.querySelector('#loading-container');
+loadingContainer.style.display = 'none';
+
+
 // Add an event listener to the search bar
 let searchBar = document.getElementById('searchBar');
 searchBar.addEventListener('input', function () {
@@ -153,17 +158,3 @@ function clearPokemonList() {
   let pokemonListContainer = document.querySelector(".pokemon-list");
   pokemonListContainer.innerHTML = '';
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOMContentLoaded event fired");
-  const loadingContainer = document.querySelector('#loading-container');
-  console.log(loadingContainer); // Log the loading container element
-  loadingContainer.style.display = 'none';
-});
-
-
-const button = document.querySelector('.show');
-button.addEventListener('click', () => {
-  const loading = document.querySelector('.loading');
-  loading.classList.remove('hide');
-});
