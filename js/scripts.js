@@ -154,11 +154,10 @@ function clearPokemonList() {
   pokemonListContainer.innerHTML = '';
 }
 
-setTimeout(() => {
+document.addEventListener("DOMContentLoaded", function () {
   const loadingContainer = document.querySelector('#loading-container');
   loadingContainer.style.display = 'none';
-}, 5000);
-
+});
 
 const button = document.querySelector('.show');
 button.addEventListener('click', () => {
