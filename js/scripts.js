@@ -155,9 +155,12 @@ function clearPokemonList() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOMContentLoaded event fired");
   const loadingContainer = document.querySelector('#loading-container');
+  console.log(loadingContainer); // Log the loading container element
   loadingContainer.style.display = 'none';
 });
+
 
 const button = document.querySelector('.show');
 button.addEventListener('click', () => {
