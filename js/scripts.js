@@ -161,6 +161,3 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".preloader").style.display = "none";
   }, 2000); // You can adjust the duration as needed
 });
-
-
-
