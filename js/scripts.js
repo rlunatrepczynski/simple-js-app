@@ -154,10 +154,13 @@ function clearPokemonList() {
   pokemonListContainer.innerHTML = '';
 }
 
-var loader = document.getElementById("preloader");
-
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
+  // Simulate the delay for demonstration purposes
   setTimeout(function () {
-    loader.style.display = "none";
-  }, 15000);
+    // Hide the preloader
+    document.querySelector(".preloader").style.display = "none";
+  }, 2000); // You can adjust the duration as needed
 });
+
+
+
